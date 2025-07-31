@@ -1,0 +1,56 @@
+{
+  "actions": [{
+    "@type": "type.googleapis.com/NoAction",
+    "icon": "command-fill",
+    "customContextDataKey": {
+    },
+    "id": "A-c02a3ecf-6685-4880-aa31-5e5d039bae2a"
+  }, {
+    "@type": "type.googleapis.com/ShellCommand",
+    "command": "getprop ro.build.version.sdk",
+    "customContextDataKey": {
+    },
+    "id": "A-c459c9cb-085a-472b-9e6e-bb9472bd15fa"
+  }, {
+    "@type": "type.googleapis.com/IfThenElse",
+    "If": [{
+      "@type": "type.googleapis.com/MatchMVEL",
+      "expression": "{shellOut} \u003e\u003d 29",
+      "customContextDataKey": {
+      },
+      "id": "C-13a7d497-b9b0-4e50-8b86-c9a68bb93ab4"
+    }],
+    "IfActions": [{
+      "@type": "type.googleapis.com/ShellCommand",
+      "command": "am broadcast -a android.telephony.action.SECRET_CODE -d android_secret_code://5776733 -p android",
+      "customContextDataKey": {
+      },
+      "id": "A-13133c01-65df-4503-a305-c3aa2a02824e"
+    }],
+    "ElseActions": [{
+      "@type": "type.googleapis.com/ShellCommand",
+      "command": "am broadcast -a android.provider.Telephony.SECRET_CODE -d android_secret_code://5776733 -p android",
+      "customContextDataKey": {
+      },
+      "id": "A-341de30d-18c9-4570-ba26-261c8f6cd7b8"
+    }],
+    "customContextDataKey": {
+    },
+    "id": "A-da7ef8e1-2931-4324-8fd4-4ed7c8cbf1f1"
+  }],
+  "id": "SHARED-DA-4458ac47-b054-411e-b423-e23d63584f8a",
+  "lastUpdateTime": "1753928648295",
+  "createTime": "1746504256869",
+  "author": {
+    "name": "淫乱"
+  },
+  "title": "LSPosed",
+  "description": "这是一个用于打开Lsposed的一键指令。",
+  "versionCode": "1",
+  "hook": {
+  },
+  "quit": {
+  }
+}
+###------###
+{"type":"da"}
